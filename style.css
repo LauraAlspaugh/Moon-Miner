@@ -1,0 +1,18 @@
+body {
+    background-color: lightgray;
+    background-image: url('https://plus.unsplash.com/premium_photo-1685088557702-a2558e0ecbb9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3RhZGl1bXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.reset-button {
+    background-color: red;
+    border-radius: 5px;
+}
+
+.this-button {
+    border-radius: 5px;
+    background-color: red;
+
+}
