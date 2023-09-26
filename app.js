@@ -2,6 +2,7 @@ let home = 0
 let away = 0
 let bottomScore = 0
 let newScore = 0
+let homeScore = 0
 
 
 
@@ -37,8 +38,8 @@ function awayPlusThree() {
     scoreElm.innerText = away
 }
 function resetButton() {
-    home * newScore
+    homeScore
     console.log('score reset', home);
-    let scoreElm = document.getElementById('home')
-    scoreElm.innerText = newScore
+    let scoreElm = document.getElementById('homeScore')
+    scoreElm.innerText = home
 }
