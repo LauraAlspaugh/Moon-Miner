@@ -142,15 +142,24 @@ function attackLocations(selectedLocation) {
     // inside the loop, add a condition ... does the person.location == selectedLocation?
     // if the condition is true ... change the person.picture to a bat
     // redraw my people
+
+    drawPeople()
+}
+function changePeopleLocations() {
+    people.forEach(person => {
+        let randomPeopleIndex = Math.floor(Math.random() * people.length)
+        let randomPeople = people[randomPeopleIndex]
+        person.location = randomPeopleIndex
+        console.log('change location')
+    })
+    changePeopleLocations()
     drawPeople()
 }
 
 
-
-
-
 drawPeopleAtJail()
 drawPeopleAtHospital()
+
 drawPeople()
 
 

@@ -1,0 +1,16 @@
+img {
+    width: 300px;
+}
+
+.cheese-count {
+    border-radius: 10px;
+    border: 2px black solid;
+    margin: 3px;
+}
+
+.stats-count {
+    border-radius: 10px;
+    border: 2px black solid;
+    background-color: gray;
+
+}

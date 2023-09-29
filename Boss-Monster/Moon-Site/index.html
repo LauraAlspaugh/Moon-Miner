@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet'
+        integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD' crossorigin='anonymous'>
+    <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Moon Site</title>
+</head>
+
+<body>
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <p class="fs-1 p-5 text-center">Moon Miner</p>
+            </div>
+        </div>
+    </header>
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center">
+                <button onclick="increaseCheese()">
+                    <img src="pedro-lastra-wCujVcf0JDw-unsplash-removebg-preview.png">
+                </button>
+            </div>
+        </div>
+        <div class="row justify-content-center p-4">
+            <div class="cheese-count col-2 bg-warning">
+                <div>
+                    <p id="auto cheese" onclick="drawClickCheese()">0</p>
+                    <button class="btn">
+                        <i class="mdi mdi-button-cursor"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="cheese-count col-3 bg-warning">
+                <div class="fs-3 justify-content-between">
+                    <i class="mdi mdi-cheese"></i>
+                    <p id="cheese">0</p>
+                </div>
+            </div>
+            <div class="cheese-count col-2 bg-warning">
+                <div>
+                    <p>
+                        <i class="mdi mdi-cheese"></i> Cheese Count
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row p-5">
+            <div class="stats-count col-3">
+                <div class="m-2">
+                    <p>Click Upgrades</p>
+                    <button id="knife-btn" onclick="buyKnife()">50</button>
+                    <p>+1</p>
+                </div>
+                <div class="m-2">
+                    <button id="pickaxe-btn" onclick="buyPickAxe()">100</button>
+                    <p>+5</p>
+                </div>
+            </div>
+            <div class="stats-count col-3">
+                <div class="m-2">
+                    <p>Automatic Upgrades</p>
+                    <button id="rover-btn" onclick="buyRover()">600</button>
+                </div>
+                <div class="m-2">
+                    <button id="space-station-btn" onclick="buySpaceStation()">800</button>
+                </div>
+            </div>
+            <div class="stats-count col-3">
+                <div class="m-2">
+                    <p>Click Stats</p>
+                    <p id="knife" onclick="buyKnife()"></p>
+                    <p>Knives</p>
+                </div>
+                <div class="m-2">
+                    <p id="pickaxe" onclick="buyPickAxe()"></p>
+                    <p>Pickaxes</p>
+                </div>
+            </div>
+
+            <div class="stats-count col-3">
+                <div class="m-2">
+                    <p>Automatic Stats</p>
+                    <p id="rover" onclick="buyRover()"></p>
+                    <p>Rovers</p>
+                </div>
+                <div class="m-2">
+                    <p id="space station" onclick="buySpaceStation()"></p>
+                    <p>Space Stations</p>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+
+    </main>
+    <footer></footer>
+    <script src="app.js"></script>
+</body>
+
+</html>
