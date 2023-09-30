@@ -45,6 +45,8 @@ function drawCheese() {
     let cheeseElement = document.getElementById('cheese')
     // @ts-ignore
     cheeseElement.innerText = cheese
+
+
 }
 
 function drawClickCheese() {
@@ -52,13 +54,23 @@ function drawClickCheese() {
     // @ts-ignore
     clickCheeseElement.innerText = clickCheese
 }
+function drawAutomaticCheese() {
+    let automaticCheeseElement = document.getElementById('automatic-clicks')
+    // @ts-ignore
+    automaticCheeseElement.innerText = autoCheese
+
+}
+function increaseAutoCheese() {
+    cheese += autoCheese
+    drawCheese()
+}
 
 function buyPickAxe() {
     let clickUpgrade = clickUpgrades.find(clickUpgrade => clickUpgrade.name == 'pickaxe')
     if (cheese >= clickUpgrade.price) {
         cheese -= clickUpgrade.price
         drawCheese()
-        debugger
+
         //change data
         clickUpgrade.quantity++
         clickUpgrade.price += 5
@@ -124,7 +136,7 @@ function buyRover() {
         console.log(automaticUpgrade)
 
         autoCheese += automaticUpgrade.multiplier
-        drawClickCheese()
+        drawAutomaticCheese()
 
 
 
@@ -156,6 +168,7 @@ function buySpaceStation() {
         console.log(automaticUpgrade)
 
         autoCheese += automaticUpgrade.multiplier
+        drawAutomaticCheese()
 
 
 

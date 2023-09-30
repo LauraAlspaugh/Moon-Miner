@@ -30,6 +30,7 @@
         <div class="row justify-content-center p-4">
             <div class="cheese-count col-2 bg-warning">
                 <div>
+                    <p>Click Updates</p>
                     <p id="click-cheese" onclick="increaseCheese()"><span>1</span> </p>
                     <i class="mdi mdi-cursor-pointer"></i>
                 </div>
@@ -42,8 +43,14 @@
             </div>
             <div class="cheese-count col-2 bg-warning">
                 <div>
-                    <p>Automated Clicks</p>
+                    <p>Automated Updates</p>
+                    <div class="health-container">
+                        <div class="health" id="bosshp">
+                            .
+                        </div>
+                    </div>
                     <i class="mdi mdi-clock"></i>
+                    <p id="automatic-clicks" onclick="increaseAutoCheese()"><span>0</span></p>
                 </div>
             </div>
         </div>
@@ -51,22 +58,22 @@
             <div class="stats-count col-3">
                 <div class="m-2">
                     <p>Click Upgrades</p>
-                    <button id="knife-btn" onclick="buyKnife()">5</button>
+                    <button id="knife-btn" class=" btn btn-info" onclick="buyKnife()">5</button>
                     <p>Knife +1</p>
                 </div>
                 <div class="m-2">
-                    <button id="pickaxe-btn" onclick="buyPickAxe()">10</button>
+                    <button id="pickaxe-btn" class="btn btn-info" onclick="buyPickAxe()">10</button>
                     <p>PickAxe +2</p>
                 </div>
             </div>
             <div class="stats-count col-3">
                 <div class="m-2">
                     <p>Automatic Upgrades</p>
-                    <button id="rover-btn" onclick="buyRover()">60</button>
+                    <button id="rover-btn" class="btn btn-info" onclick="buyRover()">60</button>
                     <p>Rover +6 / 3s</p>
                 </div>
                 <div class="m-2">
-                    <button id="space-station-btn" onclick="buySpaceStation()">80</button>
+                    <button id="space-station-btn" class="btn btn-info" onclick="buySpaceStation()">80</button>
                     <p>Space Station +8 / 3s</p>
                 </div>
             </div>

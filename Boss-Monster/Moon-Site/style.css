@@ -14,3 +14,15 @@ img {
     background-color: gray;
 
 }
+
+.health-container {
+    background-color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.health {
+    background-color: red;
+    width: 90%;
+    color: red;
+}
