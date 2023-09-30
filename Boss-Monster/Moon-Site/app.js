@@ -1,42 +1,46 @@
 let clickUpgrades = [
     {
         name: 'pickaxe',
-        price: 100,
+        price: 10,
         quantity: 0,
         multiplier: 2
     },
     {
         name: 'knife',
-        price: 50,
+        price: 5,
         quantity: 0,
-        multipliers: 1
+        multiplier: 1
     }
 ];
 
 let automaticUpgrades = [
     {
         name: 'rover',
-        price: 600,
+        price: 60,
         quantity: 0,
-        multiplier: 20
+        multiplier: 6
     },
     {
         name: 'space station',
-        price: 800,
+        price: 80,
         quantity: 0,
-        multiplier: 30
+        multiplier: 8
     }
 ];
 let autoCheese = 0
-let cheese = 1000;
+let clickCheese = 1
+let cheese = 0;
 // global variables that store clickAmt AND autoAmt
 
 function increaseCheese() {
-    cheese++
-    drawCheese()
-    drawClickCheese()
-}
+    cheese += clickCheese
 
+    drawCheese()
+    // drawClickCheese()
+}
+function totalCheese() {
+    let newClickCheese = clickCheese + cheese
+}
 function drawCheese() {
     let cheeseElement = document.getElementById('cheese')
     // @ts-ignore
@@ -44,39 +48,43 @@ function drawCheese() {
 }
 
 function drawClickCheese() {
-    let autoCheeseElement = document.getElementById('auto cheese')
+    let clickCheeseElement = document.getElementById('click-cheese')
     // @ts-ignore
-    autoCheeseElement.innerText = autoCheese
-    let totalCheese = clickUpgrades.find(clickUpgrade => clickUpgrade.quantity + clickUpgrade.multiplier)
-
+    clickCheeseElement.innerText = clickCheese
 }
 
 function buyPickAxe() {
     let clickUpgrade = clickUpgrades.find(clickUpgrade => clickUpgrade.name == 'pickaxe')
     if (cheese >= clickUpgrade.price) {
         cheese -= clickUpgrade.price
-
+        drawCheese()
+        debugger
         //change data
         clickUpgrade.quantity++
-        clickUpgrade.price += 25
-        console.log(clickUpgrade)
+        clickUpgrade.price += 5
+        // console.log(clickUpgrade)
 
-        // totalCheese = clickUp quantity + total resource
+        clickCheese += clickUpgrade.multiplier
+        // console.log('this is click cheese', clickCheese);
+        drawClickCheese()
+        // cheese = clickCheese + cheese
+        // drawCheese()
 
 
         //update dom
         let buyPickAxeElement = document.getElementById('pickaxe-btn')
+        // @ts-ignore
         buyPickAxeElement.innerText = clickUpgrade.price
 
         let addPickAxeElement = document.getElementById('pickaxe')
+        // @ts-ignore
         addPickAxeElement.innerText = clickUpgrade.quantity
 
 
     }
-    drawCheese()
-
-
 }
+
+
 function buyKnife() {
     let clickUpgrade = clickUpgrades.find(clickUpgrade => clickUpgrade.name == 'knife')
     if (cheese >= clickUpgrade.price) {
@@ -84,9 +92,11 @@ function buyKnife() {
 
         //change data
         clickUpgrade.quantity++
-        clickUpgrade.price += 25
+        clickUpgrade.price += 5
         console.log(clickUpgrade)
 
+        clickCheese += clickUpgrade.multiplier
+        drawClickCheese()
 
         //update dom
         let buyKnifeElement = document.getElementById('knife-btn')
@@ -110,8 +120,14 @@ function buyRover() {
 
         //change data
         automaticUpgrade.quantity++
-        automaticUpgrade.price += 25
+        automaticUpgrade.price += 6
         console.log(automaticUpgrade)
+
+        autoCheese += automaticUpgrade.multiplier
+        drawClickCheese()
+
+
+
 
 
         //update dom
@@ -136,8 +152,11 @@ function buySpaceStation() {
 
         //change data
         automaticUpgrade.quantity++
-        automaticUpgrade.price += 25
+        automaticUpgrade.price += 8
         console.log(automaticUpgrade)
+
+        autoCheese += automaticUpgrade.multiplier
+
 
 
         //update dom
@@ -155,8 +174,14 @@ function buySpaceStation() {
 
 
 }
+function collectAutoUpgrades() {
+    automaticUpgrades.forEach(automaticUpgrade => cheese += (automaticUpgrade.quantity * automaticUpgrade.multiplier))
+    console.log('does this auto upgrade work ', cheese)
+    drawCheese()
+}
 
 
 
 
 
+setInterval(collectAutoUpgrades, 3000);
